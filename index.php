@@ -10,6 +10,5 @@
 include 'inc/navbar.php';
 include 'inc/script.php';
 ?>
-
 </body>
 </html>
