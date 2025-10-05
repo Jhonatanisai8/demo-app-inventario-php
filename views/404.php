@@ -9,6 +9,6 @@
     </div>
 
     <button>
-        <a  class="block button is-primary" href="home.php">Ir a la página principal</a>
+        <a  class="block button is-primary" href="index.php?vista=home">Ir a la página principal</a>
     </button>
 </div>
