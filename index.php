@@ -1,3 +1,6 @@
+<?php
+require 'inc/session_start.php';
+?>
 <!doctype html>
 <html lang="es">
 <head>
