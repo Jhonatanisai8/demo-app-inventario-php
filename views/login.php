@@ -1,5 +1,5 @@
 <div class="container">
-    <form class="box">
+    <form class="box" method="post" autocomplete="off">
         <h3 class="title is-2 is-spaced has-text-centered">Sistema de Inventario</h3>
         <div class="field">
             <label class="label subtitle is-5">Usuario</label>
