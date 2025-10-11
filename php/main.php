@@ -61,5 +61,34 @@ function limpiar_cadena($cadena)
     return $cadena;
 }
 
+/*
 $texto = "  Hola <script>alert('Hola');</script>  ";
 echo limpiar_cadena($texto);
+ */
+
+function renombrar_fotos($nombre)
+{
+    $nombre = str_ireplace(" ", "-", $nombre);
+    $nombre = str_ireplace("/", "-", $nombre);
+    $nombre = str_ireplace("#", "-", $nombre);
+    $nombre = str_ireplace("$", "-", $nombre);
+    $nombre = str_ireplace("%", "-", $nombre);
+    $nombre = str_ireplace("&", "-", $nombre);
+    $nombre = str_ireplace("(", "-", $nombre);
+    $nombre = str_ireplace(")", "-", $nombre);
+    $nombre = str_ireplace("=", "-", $nombre);
+    $nombre = str_ireplace("?", "-", $nombre);
+    $nombre = str_ireplace("¡", "-", $nombre);
+    $nombre = str_ireplace("!", "-", $nombre);
+    $nombre = str_ireplace("¿", "-", $nombre);
+    $nombre = str_ireplace("'", "-", $nombre);
+    $nombre = str_ireplace("´", "-", $nombre);
+    $nombre = str_ireplace("+", "-", $nombre);
+    $nombre = str_ireplace("*", "-", $nombre);
+    //añadir fecha y hora para que no se repita el nombre
+    $fecha = new DateTime();
+    return $fecha->getTimestamp() . "-" . strtolower($nombre);
+}
+
+$nombre_foto = "Foto de prueba #1.jpg";
+echo renombrar_fotos($nombre_foto);
