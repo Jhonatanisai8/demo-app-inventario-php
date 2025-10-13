@@ -90,5 +90,57 @@ function renombrar_fotos($nombre)
     return $fecha->getTimestamp() . "-" . strtolower($nombre);
 }
 
+/*
 $nombre_foto = "Foto de prueba #1.jpg";
 echo renombrar_fotos($nombre_foto);
+ */
+
+function paginador_tablas($pagina, $numero_paginas, $url, $botones)
+{
+    $table = '<nav class="pagination is-centered" role="navigation" aria-label="pagination">';
+    if ($pagina <= 1) {
+        $table .= '<a class="pagination-previous  is-disabled" disabled>Anterior</a>
+                       <ul class="pagination-list">';
+    } else {
+        $table .= '
+        <a href="' . $url . ($pagina - 1) . '" class="pagination - previous">Anterior</a>
+        <ul class="pagination - list">
+            <li><a href="' . $url . '1" class="pagination-link" aria-label="Goto page 1">1</a></li>
+            <li><span class="pagination-ellipsis">&hellip;</span></li>
+        ';
+    }
+
+    $ci = 0;
+    for ($i = $pagina; $i <= $numero_paginas; $i++) {
+        if ($ci >= $botones) {
+            break;
+        }
+        if ($pagina == $i) {
+            $table .= '
+                    <li><a href="' . $url . $i . '" class="pagination-link is-current" aria-label="Goto page 1">' . $i . '</a></li>
+            ';
+        } else {
+            $table .= '
+                    <li><a href="' . $url . $i . '" class="pagination-link" aria-label="Goto page 1">' . $i . '</a></li>
+            ';
+        }
+        $ci++;
+    }
+
+    if ($pagina == $numero_paginas) {
+        $table .= '
+            </ul>
+                <a  class="pagination-next is-disabled" disabled >Siguiente</a>
+        ';
+    } else {
+        $table .=
+            '
+                <li><span class="pagination-ellipsis">&hellip;</span></li>
+                <li><a href="' . $url . $numero_paginas . '" class="pagination-link" aria-label="Goto page 86">' . $numero_paginas . '</a></li>
+            </ul>  
+            <a  class="pagination-next" href="' . $url . ($pagina + 1) . '"  >Siguiente</a>
+            ';
+    }
+    $table .= '</nav>';
+    return $table;
+}
