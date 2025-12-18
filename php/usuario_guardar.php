@@ -17,6 +17,7 @@ if (
 
     echo '  <div class="notification is-danger is-light">
                 <strong>Ocurrio un erro inesperado!</strong>
+                <br>
                 No has llenado todos los campos que son obligatorios
             </div>';
     exit();
