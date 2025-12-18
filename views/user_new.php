@@ -10,13 +10,17 @@
         <div class="columns">
             <div class="column">
                 <div class="control">
-                    <label>Nombres</label>
+                    <label>
+                        <strong>Nombres</strong>
+                    </label>
                     <input type="text" class="input" name="usuario_nombre" required>
                 </div>
             </div>
             <div class="column">
                 <div class="control">
-                    <label>Apellidos</label>
+                    <label>
+                        <strong>Apellidos</strong>
+                    </label>
                     <input type="text" class="input" name="usuario_apellidos" required>
                 </div>
             </div>
@@ -25,13 +29,17 @@
         <div class="columns">
             <div class="column">
                 <div class="control">
-                    <label>Usuario</label>
+                    <label>
+                        <strong>Usuario</strong>
+                    </label>
                     <input type="text" class="input" name="usuario_usuario" required>
                 </div>
             </div>
             <div class="column">
                 <div class="control">
-                    <label>Email</label>
+                    <label>
+                        <strong>Email</strong>
+                    </label>
                     <input type="email" class="input" name="usuario_email" required>
                 </div>
             </div>
@@ -40,8 +48,18 @@
         <div class="columns">
             <div class="column is-half">
                 <div class="control">
-                    <label>Clave</label>
+                    <label>
+                        <strong>Clave</strong>
+                    </label>
                     <input type="password" class="input" name="usuario_clave" required>
+                </div>
+            </div>
+            <div class="column is-half">
+                <div class="control">
+                    <label>
+                        <strong> Repetir Clave</strong>
+                    </label>
+                    <input type="password" class="input" name="usuario_clave2" required>
                 </div>
             </div>
         </div>
