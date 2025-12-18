@@ -40,7 +40,7 @@
                     <label>
                         <strong>Email</strong>
                     </label>
-                    <input type="email" class="input" name="usuario_email" required>
+                    <input type="email" class="input" name="usuario_email">
                 </div>
             </div>
         </div>
