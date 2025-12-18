@@ -2,9 +2,9 @@
     <div class="navbar-brand">
         <a class="navbar-item" href="/">
             <img src="/img/icons8-mysql-96.png"
-                 alt="MYSQL"
-                 width="65"
-                 height="28">
+                alt="MYSQL"
+                width="65"
+                height="28">
         </a>
 
         <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -24,13 +24,13 @@
                 </a>
 
                 <div class="navbar-dropdown">
-                    <a class="navbar-item">
+                    <a class="navbar-item" href="index.php?vista=user_new">
                         Nuevo
                     </a>
-                    <a class="navbar-item">
+                    <a class="navbar-item" href="index.php?vista=user_list">
                         Lista
                     </a>
-                    <a class="navbar-item">
+                    <a class="navbar-item" href="index.php?vista=user_search">
                         Buscar
                     </a>
                 </div>
