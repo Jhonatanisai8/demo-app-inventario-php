@@ -1,4 +1,4 @@
-<div>
-    <h1 class="title is-fluid">Home</h1>
-    <h2 class="subtitle">Bienvenido Usuario</h2>
+<div class="container">
+    <h1 class="title">Home</h1>
+    <h3 class="subtitle">Bienvenido!</h3>
 </div>
