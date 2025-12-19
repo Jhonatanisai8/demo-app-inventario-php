@@ -8,7 +8,7 @@ values ('Prueba','Texto Ubicacion')");
 //conexion con la base de datos
 function conexion()
 {
-    $pdo = new PDO("mysql:host=localhost;dbname=db_inventario_php", "root", "");
+    $pdo = new PDO("mysql:host=localhost;dbname=db_inventario_php", "root", "753159852");
     return $pdo;
 }
 

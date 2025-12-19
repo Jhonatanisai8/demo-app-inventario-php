@@ -49,7 +49,7 @@ if (verificar_datos("[a-zA-Z0-9]{4,20}", $nombre_usuario)) {
             </div>';
     exit();
 }
-if (verificar_datos("[a-zA-Z0-9$@.-] {7,100}", $clave1) || verificar_datos("[a-zA-Z0-9$@.-] {7,100}", $clave2)) {
+if (verificar_datos("[a-zA-Z0-9$@.\-]{7,100}", $clave1) || verificar_datos("[a-zA-Z0-9$@.\-]{7,100}", $clave2)) {
     echo '  <div class="notification is-danger is-light">
                 <strong>Ocurrio un erro inesperado!</strong>
                 <br>
@@ -61,7 +61,7 @@ if (verificar_datos("[a-zA-Z0-9$@.-] {7,100}", $clave1) || verificar_datos("[a-z
 if ($email != "") {
     if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $email_chekeado = conexion();
-        $email_chekeado = $email_chekeado->query("select usuario_email from usuario where usuario_email='$email'");
+        $email_chekeado = $email_chekeado->query("SELECT usuario_email from usuario where usuario_email='$email'");
         if ($email_chekeado->rowCount() > 0) {
             echo '  <div class="notification is-danger is-light">
                         <strong>Ocurrio un erro inesperado!</strong>
@@ -83,7 +83,7 @@ if ($email != "") {
 
 #verificacion de nombre de usuario
 $usuario_chekeado = conexion();
-$usuario_chekeado = $usuario_chekeado->query("select usuario_usuario from usuario where usuario_usuario='$nombre_usuario'");
+$usuario_chekeado = $usuario_chekeado->query("SELECT usuario_usuario from usuario where usuario_usuario='$nombre_usuario'");
 if ($usuario_chekeado->rowCount() > 0) {
     echo '  <div class="notification is-danger is-light">
                         <strong>Ocurrio un erro inesperado!</strong>
@@ -106,5 +106,7 @@ if ($clave1 != $clave2) {
     $clave = password_hash($clave1, PASSWORD_BCRYPT, ["cost" => 10]);
 }
 
-
-
+#guardando datos
+$guardar_usuario = conexion();
+$guardar_usuario = $guardar_usuario->query("INSERT INTO usuario(usuario_nombre,usuario_apellidos,usuario_usuario,usuario_clave,usuario_email)
+ VALUES('$nombre','$apellido','$nombre_usuario','$clave','$email')");

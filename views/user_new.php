@@ -69,7 +69,8 @@
                     <input type="password"
                         class="input"
                         name="usuario_clave"
-                        required pattern="[a-zA-Z0-9$@.-] {7,100}"
+                        required
+                        pattern="[a-zA-Z0-9$@.\-]{7,100}"
                         maxlength="100">
                 </div>
             </div>
@@ -82,7 +83,7 @@
                         class="input"
                         name="usuario_clave2"
                         required
-                        required pattern="[a-zA-Z0-9$@.-] {7,100}"
+                        pattern="[a-zA-Z0-9$@.\-]{7,100}"
                         maxlength="100">
                 </div>
             </div>
