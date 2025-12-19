@@ -57,3 +57,26 @@ if (verificar_datos("[a-zA-Z0-9$@.-] {7,100}", $clave1) || verificar_datos("[a-z
             </div>';
     exit();
 }
+#verificando el email
+if ($email != "") {
+    if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $email_chekeado = conexion();
+        $email_chekeado = $email_chekeado->query("select usuario_email from usuario where usuario_email='$email'");
+        if ($email_chekeado->rowCount() > 0) {
+            echo '  <div class="notification is-danger is-light">
+                        <strong>Ocurrio un erro inesperado!</strong>
+                        <br>
+                        El Email ingresado ya se encuentra registrado, por favor elija otro.
+                    </div>';
+            exit();
+        }
+        $email_chekeado = null;
+    } else {
+        echo '  <div class="notification is-danger is-light">
+                    <strong>Ocurrio un erro inesperado!</strong>
+                    <br>
+                    El Email no coincide con el formato solicitado.
+                </div>';
+        exit();
+    }
+}
