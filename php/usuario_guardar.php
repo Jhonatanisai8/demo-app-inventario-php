@@ -105,3 +105,6 @@ if ($clave1 != $clave2) {
 } else {
     $clave = password_hash($clave1, PASSWORD_BCRYPT, ["cost" => 10]);
 }
+
+
+
