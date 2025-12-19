@@ -93,3 +93,15 @@ if ($usuario_chekeado->rowCount() > 0) {
     exit();
 }
 $usuario_chekeado = null;
+
+#verfiifcaion de claves
+if ($clave1 != $clave2) {
+    echo '  <div class="notification is-danger is-light">
+                <strong>Ocurrio un erro inesperado!</strong>
+                <br>
+                Las claves ingresadas no coinciden.
+            </div>';
+    exit();
+} else {
+    $clave = password_hash($clave1, PASSWORD_BCRYPT, ["cost" => 10]);
+}
