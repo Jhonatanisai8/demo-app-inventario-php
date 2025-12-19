@@ -13,7 +13,12 @@
                     <label>
                         <strong>Nombres</strong>
                     </label>
-                    <input type="text" class="input" name="usuario_nombre" required>
+                    <input type="text"
+                        class="input"
+                        name="usuario_nombre"
+                        required
+                        pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{3,40}"
+                        maxlength="40]">
                 </div>
             </div>
             <div class="column">
@@ -21,7 +26,11 @@
                     <label>
                         <strong>Apellidos</strong>
                     </label>
-                    <input type="text" class="input" name="usuario_apellidos" required>
+                    <input type="text"
+                        class="input"
+                        name="usuario_apellidos"
+                        required pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{3,40}"
+                        maxlength="40]">
                 </div>
             </div>
         </div>
@@ -32,7 +41,11 @@
                     <label>
                         <strong>Usuario</strong>
                     </label>
-                    <input type="text" class="input" name="usuario_usuario" required>
+                    <input type="text"
+                        class="input"
+                        name="usuario_usuario"
+                        required pattern="[a-zA-Z0-9]{4,20}"
+                        maxlength="20">
                 </div>
             </div>
             <div class="column">
@@ -40,7 +53,9 @@
                     <label>
                         <strong>Email</strong>
                     </label>
-                    <input type="email" class="input" name="usuario_email">
+                    <input type="email"
+                        class="input"
+                        name="usuario_email">
                 </div>
             </div>
         </div>
@@ -51,7 +66,11 @@
                     <label>
                         <strong>Clave</strong>
                     </label>
-                    <input type="password" class="input" name="usuario_clave" required>
+                    <input type="password"
+                        class="input"
+                        name="usuario_clave"
+                        required pattern="[a-zA-Z0-9$@.-] {7,100}"
+                        maxlength="100">
                 </div>
             </div>
             <div class="column is-half">
@@ -59,7 +78,12 @@
                     <label>
                         <strong> Repetir Clave</strong>
                     </label>
-                    <input type="password" class="input" name="usuario_clave2" required>
+                    <input type="password"
+                        class="input"
+                        name="usuario_clave2"
+                        required
+                        required pattern="[a-zA-Z0-9$@.-] {7,100}"
+                        maxlength="100">
                 </div>
             </div>
         </div>
