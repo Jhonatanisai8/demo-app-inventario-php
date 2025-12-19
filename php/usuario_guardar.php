@@ -80,3 +80,16 @@ if ($email != "") {
         exit();
     }
 }
+
+#verificacion de nombre de usuario
+$usuario_chekeado = conexion();
+$usuario_chekeado = $usuario_chekeado->query("select usuario_usuario from usuario where usuario_usuario='$nombre_usuario'");
+if ($usuario_chekeado->rowCount() > 0) {
+    echo '  <div class="notification is-danger is-light">
+                        <strong>Ocurrio un erro inesperado!</strong>
+                        <br>
+                        El Nombre de usuario ya se encuentra registrado, por favor elija otro.
+                    </div>';
+    exit();
+}
+$usuario_chekeado = null;
