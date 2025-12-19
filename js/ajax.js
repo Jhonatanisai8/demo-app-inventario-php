@@ -24,6 +24,11 @@ function enviar_formulario_ajax(e) {
       .then((response) => {
         let container = document.querySelector(".form-rest");
         container.innerHTML = response;
+
+        // limpiamos los campos
+        if (!response.includes("notification is-danger")) {
+          this.reset();
+        }
       });
   } else {
   }
