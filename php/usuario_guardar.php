@@ -108,5 +108,28 @@ if ($clave1 != $clave2) {
 
 #guardando datos
 $guardar_usuario = conexion();
-$guardar_usuario = $guardar_usuario->query("INSERT INTO usuario(usuario_nombre,usuario_apellidos,usuario_usuario,usuario_clave,usuario_email)
- VALUES('$nombre','$apellido','$nombre_usuario','$clave','$email')");
+$guardar_usuario = $guardar_usuario->prepare("INSERT INTO usuario(usuario_nombre,usuario_apellidos,usuario_usuario,usuario_clave,usuario_email)
+ VALUES(:nombre,:apellido,:nombre_usuario,:clave,:email)");
+
+$marcadores = [
+    ":nombre" => $nombre,
+    ":apellido" => $apellido,
+    ":nombre_usuario" => $nombre_usuario,
+    ":clave" => $clave,
+    ":email" => $email
+];
+$guardar_usuario->execute($marcadores);
+if ($guardar_usuario->rowCount() == 1) {
+    echo '  <div class="notification is-info is-light">
+                <strong>Usuario registrado!</strong>
+                <br>
+                El usuario se registro con exito.
+            </div>';
+} else {
+    echo '  <div class="notification is-danger is-light">
+                <strong>Ocurrio un erro inesperado!</strong>
+                <br>
+                No se pudo registrar el usuario, por favor intente nuevamente.
+            </div>';
+}
+$guardar_usuario = null;
