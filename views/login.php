@@ -4,14 +4,23 @@
         <div class="field">
             <label class="label subtitle is-5">Usuario</label>
             <div class="control">
-                <input class="input" type="email" placeholder="e.g. alex@example.com"/>
+                <input class="input"
+                    type="email"
+                    placeholder="e.g. alex@example.com"
+                    pattern="[a-zA-Z0-9]{4,20}"
+                    maxlength="20"
+                    required />
             </div>
         </div>
 
         <div class="field">
             <label class="label subtitle is-5">Password</label>
             <div class="control">
-                <input class="input" type="password" placeholder="********"/>
+                <input class="input"
+                    type="password"
+                    placeholder="********"
+                    maxlength="20"
+                    required />
             </div>
         </div>
         <button class="button is-primary">Ingresar al Sistema</button>
