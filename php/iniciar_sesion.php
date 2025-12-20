@@ -24,16 +24,15 @@ if (verificar_datos("[a-zA-Z0-9]{4,20}", $login_usuario)) {
     ';
     exit();
 }
-if (verificar_datos("[a-ZA-Z0-9$@.-]{7,100}", $login_password)) {
+if (verificar_datos("[a-zA-Z0-9$@.-]{7,100}", $login_password)) {
     echo '
         <div class="notification is-danger is-light">
-            <strong>¡Ocurrio un error inesperado!</strong><br>
-            La CONTRASEÑA no coincide con el formato solicitado
+            <strong>¡Ocurrió un error inesperado!</strong><br>
+            La CONTRASEÑA no coincide con el formato solicitado.
         </div>
     ';
     exit();
 }
-
 /*
 usuario_id
 usuario_nombre

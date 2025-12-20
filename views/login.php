@@ -6,7 +6,7 @@
             <div class="control">
                 <input class="input"
                     name="login_usuario"
-                    type="email"
+                    type="text"
                     placeholder="e.g. alex@example.com"
                     pattern="[a-zA-Z0-9]{4,20}"
                     maxlength="20"
@@ -18,11 +18,11 @@
             <label class="label subtitle is-5">Password</label>
             <div class="control">
                 <input class="input"
-                    pattern="[a-ZA-Z0-9$@.-]{7,100}"
+                    pattern="[a-zA-Z0-9$@.\-]{7,100}"
                     name="login_clave"
                     type="password"
                     placeholder="********"
-                    maxlength="20"
+                    maxlength="100"
                     required />
             </div>
         </div>
