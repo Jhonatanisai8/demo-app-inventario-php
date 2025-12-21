@@ -24,12 +24,8 @@ require 'inc/session_start.php';
         if ((!isset($_SESSION['id']) || $_SESSION['id'] == "") ||
             (isset($_SESSION['usuario']) || $_SESSION['usuario'] == "")
         ) {
-            session_destroy();
-            if (headers_sent()) {
-                echo "<script> window.location.href='index.php?vista=login'; </script>";
-            } else {
-                header("Location: index.php?vista=login");
-            }
+            require './views/logout.php';
+            exit();
         }
         include './inc/navbar.php';
         include "./views/" . $_GET['vista'] . ".php";
