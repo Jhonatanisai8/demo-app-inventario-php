@@ -22,7 +22,7 @@ require 'inc/session_start.php';
     ) {
         //cerrar sesion forzada
         if ((!isset($_SESSION['id']) || $_SESSION['id'] == "") ||
-            (isset($_SESSION['usuario']) || $_SESSION['usuario'] == "")
+            (!isset($_SESSION['usuario']) || $_SESSION['usuario'] == "")
         ) {
             require './views/logout.php';
             exit();
